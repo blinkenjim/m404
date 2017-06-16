@@ -1,8 +1,13 @@
-const unsigned int pin_blank_ = 3;
-const unsigned int pin_test_ = 2;
+
 const unsigned int pin_wr_ = 4;
 const unsigned int pin_sel_ = 5;
 const unsigned int pin_busy = 6;
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(9, 10);
+
+const unsigned int pin_blank_ = 3;
+const unsigned int pin_test_ = 2;
 const unsigned int pin_d1 = A0;
 const unsigned int pin_d2 = 8;
 const unsigned int pin_d3 = 9;
@@ -32,20 +37,20 @@ const unsigned int pin_reset_ = 7;
 
 void metered_print(const char *s) {
   while (*s) {
-    Serial.write(*s++);
+    mySerial.write(*s++);
     INTERCHAR_DELAY;
   }
 }
 
 void metered_write(const unsigned char *s, unsigned int len) {
   for(int i = 0; i < len; i++) {
-    Serial.write(*s++);
+    mySerial.write(*s++);
     INTERCHAR_DELAY;
   }
 }
 
 void metered_write(const unsigned char c) {
-  Serial.write(c);
+  mySerial.write(c);
   INTERCHAR_DELAY;
 }
 
@@ -94,7 +99,7 @@ void setup() {
   delay(1);
   digitalWrite(pin_wr_, HIGH);
 
-  Serial.begin(BAUD, SERIAL_8N1);
+  mySerial.begin(BAUD);
   //Serial1.begin(115200, SERIAL_8N1);
 
   delay(1000);
