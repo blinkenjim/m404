@@ -1,4 +1,6 @@
 
+// This version now under GitLab control.
+
 const unsigned int pin_wr_ = 4;
 const unsigned int pin_sel_ = 5;
 const unsigned int pin_busy = 6;
