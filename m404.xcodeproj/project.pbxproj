@@ -6,10 +6,15 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		05B280C21EF48CFF00AE4975 /* m404-demo.ino */ = {isa = PBXFileReference; lastKnownFileType = text; name = "m404-demo.ino"; path = "arduino/m404-demo.ino"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		05B280BB1EF48C2A00AE4975 = {
 			isa = PBXGroup;
 			children = (
+				05B280C21EF48CFF00AE4975 /* m404-demo.ino */,
 			);
 			sourceTree = "<group>";
 		};
