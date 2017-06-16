@@ -8,12 +8,14 @@
 
 /* Begin PBXFileReference section */
 		05B280C21EF48CFF00AE4975 /* m404-demo.ino */ = {isa = PBXFileReference; lastKnownFileType = text; name = "m404-demo.ino"; path = "arduino/m404-demo.ino"; sourceTree = "<group>"; };
+		05B280C41EF4966700AE4975 /* m404-disp.ino */ = {isa = PBXFileReference; lastKnownFileType = text; name = "m404-disp.ino"; path = "arduino/m404-disp.ino"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		05B280BB1EF48C2A00AE4975 = {
 			isa = PBXGroup;
 			children = (
+				05B280C41EF4966700AE4975 /* m404-disp.ino */,
 				05B280C21EF48CFF00AE4975 /* m404-demo.ino */,
 			);
 			sourceTree = "<group>";
