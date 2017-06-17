@@ -1,3 +1,25 @@
+
+// M404 - A vacuum fluorescent display monitor for Raspberry Pi.
+//
+// Copyright (c) 2017 James Thompson
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software
+// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+// MA 02110-1301, USA.
+
+#include <SoftwareSerial.h>
+
 const unsigned int pin_blank_ = 3;
 const unsigned int pin_test_ = 2;
 const unsigned int pin_wr_ = 4;
@@ -11,8 +33,6 @@ const unsigned int pin_d5 = 11;
 const unsigned int pin_d6 = 12;
 const unsigned int pin_d7 = A1;
 const unsigned int pin_reset_ = 7;
-
-#include <SoftwareSerial.h>
 
 SoftwareSerial mySerial(9, 10);
 
