@@ -23,3 +23,5 @@ lines. In addition to the VFD module, the monitor consists of:
 
 This project includes all the code, schematics, 3D models, and assembly 
 information necessary to build and use an M404 monitor.
+
+![M404 Monitor Fully Assembled](doc/photos/7-assembled-small.JPG)

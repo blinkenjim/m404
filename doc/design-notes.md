@@ -201,4 +201,8 @@ Detail view of the interface connector on the VFD module:
 
 ![CN1 detail view front](photos/6-cn1-bottom-detail.JPG)
 
+Fully assembled:
+
+![Fully assembled](photos/7-assembled.JPG)
+
 [1]: https://www.boltdepot.com/Socket_cap_Alloy_steel_black_oxide_finish_4-40.aspx?Selected=7872
