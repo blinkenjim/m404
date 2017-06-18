@@ -1,5 +1,8 @@
-
+//
 // M404 - A vacuum fluorescent display monitor for Raspberry Pi.
+//
+// This is a demo program that display's Lewis Carroll's poem
+// Jabberwocky on the M404SD01 Vacuum Fluorescent Display module.
 //
 // Copyright (c) 2017 James Thompson
 //
@@ -20,21 +23,14 @@
 
 #include <SoftwareSerial.h>
 
-const unsigned int pin_wr_ = 4;
-const unsigned int pin_sel_ = 5;
-const unsigned int pin_busy = 6;
 const unsigned int pin_blank_ = 3;
 const unsigned int pin_test_ = 2;
-const unsigned int pin_d1 = A0;
-const unsigned int pin_d2 = 8;
-const unsigned int pin_d3 = 9;
-const unsigned int pin_d4 = 10;
-const unsigned int pin_d5 = 11;
-const unsigned int pin_d6 = 12;
-const unsigned int pin_d7 = A1;
-const unsigned int pin_reset_ = 7;
+const unsigned int pin_reset_ = 5;
+const unsigned int pin_busy = 6;
+const unsigned int pin_nc = 9;
+const unsigned int pin_rxd = 10;
 
-SoftwareSerial mySerial(9, 10);
+SoftwareSerial mySerial(pin_nc, pin_rxd);
 
 // We must delay a short time after writing each character, or else
 // or the module receives garbled text. 440 microseconds seems to be
@@ -73,29 +69,16 @@ void metered_write(const unsigned char c) {
   INTERCHAR_DELAY;
 }
 
-void setup() {
+void setup(){
   // put your setup code here, to run once:
+  pinMode(pin_busy, INPUT);
+
   pinMode(pin_blank_, OUTPUT);
   pinMode(pin_test_, OUTPUT);
-  pinMode(pin_wr_, OUTPUT);
-  pinMode(pin_sel_, OUTPUT);
-  delay(1);
-
-  pinMode(pin_busy, INPUT);
-  
-  pinMode(pin_d1, OUTPUT);
-  pinMode(pin_d2, OUTPUT);
-  pinMode(pin_d3, OUTPUT);
-  pinMode(pin_d4, OUTPUT);
-  pinMode(pin_d5, OUTPUT);
-  pinMode(pin_d6, OUTPUT);
-  pinMode(pin_d7, OUTPUT);
   pinMode(pin_reset_, OUTPUT);
-
+ 
   digitalWrite(pin_blank_, HIGH);
   digitalWrite(pin_test_, HIGH);
-  digitalWrite(pin_wr_, HIGH);
-  digitalWrite(pin_sel_, HIGH);
   digitalWrite(pin_reset_, HIGH);
 
 #if 0
@@ -103,23 +86,7 @@ void setup() {
   while (true) {}
 #endif
 
-  delay(1);
-
-  digitalWrite(pin_d1, LOW);
-  digitalWrite(pin_d2, HIGH);
-  digitalWrite(pin_d3, LOW);
-  digitalWrite(pin_d4, HIGH);
-  digitalWrite(pin_d5, LOW);
-  digitalWrite(pin_d6, HIGH);
-  digitalWrite(pin_d7, LOW);
-
-  delay(1);
-  digitalWrite(pin_wr_, LOW);
-  delay(1);
-  digitalWrite(pin_wr_, HIGH);
-
   mySerial.begin(BAUD);
-  //Serial1.begin(115200, SERIAL_8N1);
 
   delay(1000);
 
@@ -136,18 +103,9 @@ void setup() {
 }
 
 void loop() {
-#if 0 
-  while(true) {
-    while (Serial1.available() > 0) {
-      unsigned char c = Serial1.read();
-      metered_write(c);
-    }
-  }
-  
-#else
 
-const int d1 = 1000;
-const int d2 = 4000;
+  const int d1 = 1000;
+  const int d2 = 4000;
 
   metered_write(0x0b);
   metered_write(0x13);
@@ -214,5 +172,4 @@ const int d2 = 4000;
   delay(d2);
 
   delay(4000);
-#endif
 }

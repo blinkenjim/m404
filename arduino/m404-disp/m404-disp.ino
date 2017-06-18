@@ -22,19 +22,12 @@
 
 const unsigned int pin_blank_ = 3;
 const unsigned int pin_test_ = 2;
-const unsigned int pin_wr_ = 4;
-const unsigned int pin_sel_ = 5;
+const unsigned int pin_reset_ = 5;
 const unsigned int pin_busy = 6;
-const unsigned int pin_d1 = A0;
-const unsigned int pin_d2 = 8;
-const unsigned int pin_d3 = 9;
-const unsigned int pin_d4 = 10;
-const unsigned int pin_d5 = 11;
-const unsigned int pin_d6 = 12;
-const unsigned int pin_d7 = A1;
-const unsigned int pin_reset_ = 7;
+const unsigned int pin_nc = 9;
+const unsigned int pin_rxd = 10;
 
-SoftwareSerial mySerial(9, 10);
+SoftwareSerial mySerial(pin_nc, pin_rxd);
 
 // We must delay a short time after writing each character, or else
 // or the module receives garbled text. 440 microseconds seems to be
@@ -72,30 +65,16 @@ void metered_write(const unsigned char c) {
   mySerial.write(c);
   INTERCHAR_DELAY;
 }
-
-void setup() {
+void setup(){
   // put your setup code here, to run once:
+  pinMode(pin_busy, INPUT);
+
   pinMode(pin_blank_, OUTPUT);
   pinMode(pin_test_, OUTPUT);
-  pinMode(pin_wr_, OUTPUT);
-  pinMode(pin_sel_, OUTPUT);
-  delay(1);
-
-  pinMode(pin_busy, INPUT);
-  
-  pinMode(pin_d1, OUTPUT);
-  pinMode(pin_d2, OUTPUT);
-  pinMode(pin_d3, OUTPUT);
-  pinMode(pin_d4, OUTPUT);
-  pinMode(pin_d5, OUTPUT);
-  pinMode(pin_d6, OUTPUT);
-  pinMode(pin_d7, OUTPUT);
   pinMode(pin_reset_, OUTPUT);
-
+ 
   digitalWrite(pin_blank_, HIGH);
   digitalWrite(pin_test_, HIGH);
-  digitalWrite(pin_wr_, HIGH);
-  digitalWrite(pin_sel_, HIGH);
   digitalWrite(pin_reset_, HIGH);
 
 #if 0
@@ -103,33 +82,17 @@ void setup() {
   while (true) {}
 #endif
 
-  delay(1);
-
-  digitalWrite(pin_d1, LOW);
-  digitalWrite(pin_d2, HIGH);
-  digitalWrite(pin_d3, LOW);
-  digitalWrite(pin_d4, HIGH);
-  digitalWrite(pin_d5, LOW);
-  digitalWrite(pin_d6, HIGH);
-  digitalWrite(pin_d7, LOW);
-
-  delay(1);
-  digitalWrite(pin_wr_, LOW);
-  delay(1);
-  digitalWrite(pin_wr_, HIGH);
-
   mySerial.begin(BAUD);
-  Serial.begin(115200, SERIAL_8N1);
 
   delay(1000);
 
   unsigned char dim_cmd[] = { 0x04, 0xff };
   metered_write(dim_cmd, 2);
 
-#if 0
+#if 1
   unsigned char outchar = 32;
   for (int i = 0; i < 160; i++) {
-    mySerial.write(outchar++);
+    Serial.write(outchar++);
     INTERCHAR_DELAY;
   }
 #endif
@@ -138,7 +101,6 @@ void setup() {
 void loop() {
   metered_print("M404 monitor starting...\n\n");
   
-#if 1
   unsigned long last_millis = millis();
   unsigned long now_millis = last_millis;
   
@@ -166,7 +128,4 @@ void loop() {
       }
     }
   }
-  
-#else
-#endif
 }
