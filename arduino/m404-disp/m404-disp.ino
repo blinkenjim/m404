@@ -24,6 +24,7 @@ const unsigned int pin_blank_ = 3;
 const unsigned int pin_test_ = 2;
 const unsigned int pin_reset_ = 5;
 const unsigned int pin_busy = 6;
+
 const unsigned int pin_nc = 9;
 const unsigned int pin_rxd = 10;
 
@@ -65,42 +66,33 @@ void metered_write(const unsigned char c) {
   mySerial.write(c);
   INTERCHAR_DELAY;
 }
-void setup(){
+
+void setup() {
   // put your setup code here, to run once:
   pinMode(pin_busy, INPUT);
 
   pinMode(pin_blank_, OUTPUT);
-  pinMode(pin_test_, OUTPUT);
+  pinMode(pin_test_, OUTPUT);  
   pinMode(pin_reset_, OUTPUT);
- 
+
   digitalWrite(pin_blank_, HIGH);
   digitalWrite(pin_test_, HIGH);
   digitalWrite(pin_reset_, HIGH);
 
-#if 0
-  digitalWrite(pin_test_, LOW);
-  while (true) {}
-#endif
+  delay(1);
 
   mySerial.begin(BAUD);
+  Serial.begin(115200, SERIAL_8N1);
 
   delay(1000);
 
   unsigned char dim_cmd[] = { 0x04, 0xff };
   metered_write(dim_cmd, 2);
-
-#if 1
-  unsigned char outchar = 32;
-  for (int i = 0; i < 160; i++) {
-    Serial.write(outchar++);
-    INTERCHAR_DELAY;
-  }
-#endif
 }
 
 void loop() {
   metered_print("M404 monitor starting...\n\n");
-  
+
   unsigned long last_millis = millis();
   unsigned long now_millis = last_millis;
   
