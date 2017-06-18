@@ -7,7 +7,7 @@ Introduction
 The M404 Monitor is a device to display status for a headless
 Raspberry Pi (or any other computer with a USB port).
 
-![M404 Monitor in use](photos/1-in-use.jpg "M404 monitor in use with my Raspberry Pi 3")
+![M404 Monitor in use](photos/1-in-use.jpg)
 
 The monitor is built around a Futaba M404SD01 Vacuum Fluorescent
 Display (VPN) module. This module has a display of 40 characters by 4
@@ -110,4 +110,30 @@ Raspberry Pi:
 Power
 -----
 
-A 1/4" hole must be drilled in the case to accept a 2.1mm barrel jack 
+A 1/4" hole must be drilled in the case to accept a 2.1mm barrel jack
+for power. The hole is not included in the 3D model to allow some
+end-user choice of exactly where to locate the jack. I put mine on the
+same end of the case as the USB port.
+
+Photos
+------
+
+The M404 monitor with the top cover removed:
+
+![Front View](photos/2-top-cover-removed.jpg)
+
+The M404 monitor with the back cover removed:
+
+![Back view](photos/3-bottom-cover-removed.jpg)
+
+Detail view of the Arduino nano from the bottom:
+
+![Nano detail view back](photos/4-nano-bottom-detail.JPG
+
+Detail view of the Arduino nano from the top, VFD module removed:
+
+![Nano detail view front](photos/5-nano-top-detail.JPG)
+
+Detail view of the interface connector on the VFD module:
+
+![CN1 detail view front](photos/6-cn1-bottom-detail.JPG)
