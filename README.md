@@ -1,18 +1,23 @@
 M404 Monitor
+------------
 
-This project is based on the Futaba M404SD01, a vacuum fluorescent display (VFD)
-module with a 40-character by 4-line display. The M404 Monitor is intended to
-display status - date, time, IP addresses, and system load - for a headless
-Raspberry Pi computer. The project has three major parts: a 3D-printed case
-with laser-cut acrylic front and back covers; an Arduino Nano that drives the
-VFD module; and a python script that runs as a system service on the Raspberry
-Pi. The Python script gathers information on the Raspberry Pi, sends it to the
-Arduino, which forwards the information to the Futaba VFD module.
+The M404 monitor is a device to display status for a headless
+Raspberry Pi (or any other computer with a USB port).
 
-The parts of this project are:
+![M404 Monitor in use](doc/photos/1-in-use.jpg)
 
-* 3d - The Autodesk Fusion project file, and exported STL and SVG files.
-* Aurduino - The code that runs on the Arduino Nano.
-* Python - The python script and shell script that constitute the system service
-           for the Raspberry Pi.
-* Ref - a copy of the Futaba manual for the M404SD01 VFD module.
+The monitor is built around a Futaba M404SD01 Vacuum Fluorescent
+Display (VFD) module. This module has a display of 40 characters by 4
+lines. In addition to the VFD module, the monitor consists of:
+
+1. A 3D printed case.
+
+2. Laser-cut acrylic front and back covers.
+
+2. An Arduino Nano that drives the VFD module.
+
+3. A Python script that runs on the Raspberry Pi to gather data for
+   display.
+
+This project includes all the code, schematics, 3D models, and assembly 
+information necessary to build and use an M404 monitor.
