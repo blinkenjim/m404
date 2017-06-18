@@ -10,7 +10,7 @@ Raspberry Pi (or any other computer with a USB port).
 ![M404 Monitor in use](photos/1-in-use.jpg)
 
 The monitor is built around a Futaba M404SD01 Vacuum Fluorescent
-Display (VPN) module. This module has a display of 40 characters by 4
+Display (VFD) module. This module has a display of 40 characters by 4
 lines. In addition to the VFD module, the monitor consists of:
 
 1. A 3D printed case.
@@ -21,6 +21,7 @@ lines. In addition to the VFD module, the monitor consists of:
 
 3. A Python script that runs on the Raspberry Pi to gather data for
    display.
+
 
 3D Printed Case
 ---------------
@@ -40,6 +41,7 @@ axis (long axis) or the print will be unusable.
 
 The 3D model files are in the 3d directory.
 
+
 Laser-Cut Covers
 ----------------
 
@@ -49,6 +51,7 @@ back covers. I use 1/8" translucent grey acrylic for the front cover
 and 1/8" opaque black acrylic for the back cover.
 
 The SVG file is in the 3d directory with the STL file.
+
 
 Arduino Nano
 ------------
@@ -89,6 +92,7 @@ module is twofold:
    RESPONDING". This would not be possible if the Raspberry Pi were
    communicating directly to the VFD module.
 
+
 Python
 ------
 
@@ -107,6 +111,7 @@ Raspberry Pi:
    boot, and it can be controlled with the 'service' command:
    e.g. `service m404 start`, `service m404 status`, etc.
 
+
 Power
 -----
 
@@ -114,6 +119,7 @@ A 1/4" hole must be drilled in the case to accept a 2.1mm barrel jack
 for power. The hole is not included in the 3D model to allow some
 end-user choice of exactly where to locate the jack. I put mine on the
 same end of the case as the USB port.
+
 
 Fasteners
 ---------
@@ -128,6 +134,7 @@ case, and four each to attach the top and bottom covers. #4-40 screws
 in 1/4" or 3/8" screws will work nicely. I prefer [socket cap, alloy
 steel black oxide finish screws] [1] from Bolt Depot.
 
+
 Schematic
 ---------
 
@@ -136,6 +143,27 @@ showing the connections required between the Arduino nano, VFD module,
 and power jack.
 
 ![Schematic](schematic.png)
+
+
+Assembly Notes
+--------------
+
+The CN1 connector on the VFD module is a 2x13 pin IDC header. The
+simplest way to connect is to use a matching crimp-on plug with a
+26-pin ribbon cable. Only a few of the wires are required, and the
+others can be cut short - but leave an inch or two of the full ribbon
+table to give yourself something to grasp when disconnecting the
+plug.
+
+When I assemble my M404 monitor, I only had a 2x10 pin plug handy, so
+I used that instead. It required that I clip pins 21 and 22 off the
+IDC header, otherwise they interfere with the IDC plug. To connect to
+Vcc (pins 23 and 24) and GND (pins 25 and 26), I soldered wires
+directly to the pins in the header.
+
+It would also be possible to forego the IDC plug entirely, and just
+solder directly to the pins in the header.
+
 
 Photos
 ------
