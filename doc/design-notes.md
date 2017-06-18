@@ -115,6 +115,20 @@ for power. The hole is not included in the 3D model to allow some
 end-user choice of exactly where to locate the jack. I put mine on the
 same end of the case as the USB port.
 
+Fasteners
+---------
+
+As mention above, four tiny screws are required to attach the Arduino
+nano to the case. I didn't purchase these screws specifically for this
+use, but found four screws in my small fastener collection (mostly
+these come from old devices I've disassembled.
+
+12 larger screws are required: four to attach the VFD module to the
+case, and four each to attach the top and bottom covers. #4-40 screws
+in 1/4" or 3/8" screws will work nicely. I prefer [socket cap, alloy
+steel black oxide finish screws] [1] from Bolt Depot.
+
+
 Photos
 ------
 
@@ -137,3 +151,5 @@ Detail view of the Arduino nano from the top, VFD module removed:
 Detail view of the interface connector on the VFD module:
 
 ![CN1 detail view front](photos/6-cn1-bottom-detail.JPG)
+
+[1]: https://www.boltdepot.com/Socket_cap_Alloy_steel_black_oxide_finish_4-40.aspx?Selected=7872
