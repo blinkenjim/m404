@@ -4,6 +4,8 @@ M404 Monitor
 The M404 monitor is a device to display status for a headless
 Raspberry Pi (or any other computer with a USB port).
 
+For more information see doc/design-notes.md.
+
 ![M404 Monitor in use](doc/photos/1-in-use-small.jpg)
 
 The monitor is built around a Futaba M404SD01 Vacuum Fluorescent
