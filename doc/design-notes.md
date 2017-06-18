@@ -128,6 +128,14 @@ case, and four each to attach the top and bottom covers. #4-40 screws
 in 1/4" or 3/8" screws will work nicely. I prefer [socket cap, alloy
 steel black oxide finish screws] [1] from Bolt Depot.
 
+Schematic
+---------
+
+An Eagle project and schematic are included in the eagle directory
+showing the connections required between the Arduino nano, VFD module,
+and power jack.
+
+![Schematic](schematic.png)
 
 Photos
 ------
