@@ -134,7 +134,7 @@ Photos
 
 The M404 monitor with the top cover removed:
 
-![Front View](photos/2-top-cover-removed.jpg)
+![Front View](photos/2-top-cover-removed.JPG)
 
 The M404 monitor with the back cover removed:
 
