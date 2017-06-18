@@ -141,16 +141,6 @@ in 1/4" or 3/8" length will work nicely. I prefer [socket cap, alloy
 steel black oxide finish] [1] bolts from Bolt Depot.
 
 
-Schematic
----------
-
-An Eagle project and schematic are included in the eagle directory
-showing the connections required between the Arduino nano, VFD module,
-and power jack.
-
-![Schematic](schematic.png)
-
-
 Assembly Notes
 --------------
 
@@ -169,6 +159,23 @@ directly to the pins in the header.
 
 It would also be possible to forego the IDC plug entirely, and just
 solder directly to the pins in the header.
+
+
+Reference Information
+---------------------
+
+A copy of the documentation for the Futaba M404SD01 Vacuum Fluorescent
+Display module is in the ref directory.
+
+
+Schematic
+---------
+
+An Eagle project and schematic are included in the eagle directory
+showing the connections required between the Arduino nano, VFD module,
+and power jack.
+
+![Schematic](../eagle/schematic.png)
 
 
 Photos
@@ -195,10 +202,3 @@ Detail view of the interface connector on the VFD module:
 ![CN1 detail view front](photos/6-cn1-bottom-detail.JPG)
 
 [1]: https://www.boltdepot.com/Socket_cap_Alloy_steel_black_oxide_finish_4-40.aspx?Selected=7872
-
-
-Reference Information
----------------------
-
-A copy of the documentation for the Futaba M404SD01 Vacuum Fluorescent
-Display module is in the ref directory.
