@@ -92,6 +92,12 @@ module is twofold:
    RESPONDING". This would not be possible if the Raspberry Pi were
    communicating directly to the VFD module.
 
+The Aurdion uses two serial ports: the built-in serial port on pins 0
+and 1 is used to receive information from the Raspberry Pi. A soft
+serial port on pins 9 and 10 is used to transmit information to the
+VFD module (only the transmit pin, 10, is used and pin 9 is left
+unconnected).
+
 
 Python
 ------
@@ -124,15 +130,15 @@ same end of the case as the USB port.
 Fasteners
 ---------
 
-As mention above, four tiny screws are required to attach the Arduino
-nano to the case. I didn't purchase these screws specifically for this
-use, but found four screws in my small fastener collection (mostly
-these come from old devices I've disassembled.
+As mentioned above, four tiny screws are required to attach the
+Arduino nano to the case. I didn't purchase these screws, but found
+four in my small fastener collection (mostly these come from old
+devices I've disassembled.
 
 12 larger screws are required: four to attach the VFD module to the
-case, and four each to attach the top and bottom covers. #4-40 screws
-in 1/4" or 3/8" screws will work nicely. I prefer [socket cap, alloy
-steel black oxide finish screws] [1] from Bolt Depot.
+case, and four each to attach the front and backcovers. #4-40 screws
+in 1/4" or 3/8" length will work nicely. I prefer [socket cap, alloy
+steel black oxide finish] [1] bolts from Bolt Depot.
 
 
 Schematic
@@ -189,3 +195,10 @@ Detail view of the interface connector on the VFD module:
 ![CN1 detail view front](photos/6-cn1-bottom-detail.JPG)
 
 [1]: https://www.boltdepot.com/Socket_cap_Alloy_steel_black_oxide_finish_4-40.aspx?Selected=7872
+
+
+Reference Information
+---------------------
+
+A copy of the documentation for the Futaba M404SD01 Vacuum Fluorescent
+Display module is in the ref directory.
