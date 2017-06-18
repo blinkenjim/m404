@@ -152,7 +152,7 @@ The CN1 connector on the VFD module is a 2x13 pin IDC header. The
 simplest way to connect is to use a matching crimp-on plug with a
 26-pin ribbon cable. Only a few of the wires are required, and the
 others can be cut short - but leave an inch or two of the full ribbon
-table to give yourself something to grasp when disconnecting the
+cable to give yourself something to grasp when disconnecting the
 plug.
 
 When I assemble my M404 monitor, I only had a 2x10 pin plug handy, so
