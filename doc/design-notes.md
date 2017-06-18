@@ -34,6 +34,6 @@ I have included an export of the Fusion project files, but should note
 that I have never tried to work from an export (Fusion stores its
 designs in the cloud, and I always work from these copies).
 
-Also included is an STL model exported from Fusion. *IMPORTANT NOTE*:
+Also included is an STL model exported from Fusion. **IMPORTANT NOTE**:
 when slicing the model for printing, it *MUST* be mirrored along the Y
 axis (long axis).
