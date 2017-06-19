@@ -181,7 +181,7 @@ and power jack.
 Photos
 ------
 
-The M404 monitor with the top cover removed:
+The M404 monitor with the front cover removed:
 
 ![Front View](photos/2-top-cover-removed.JPG)
 
@@ -193,7 +193,7 @@ Detail view of the Arduino nano from the bottom:
 
 ![Nano detail view back](photos/4-nano-bottom-detail.JPG)
 
-Detail view of the Arduino nano from the top, VFD module removed:
+Detail view of the Arduino nano from the front (with the VFD module removed):
 
 ![Nano detail view front](photos/5-nano-top-detail.JPG)
 
@@ -201,7 +201,7 @@ Detail view of the interface connector on the VFD module:
 
 ![CN1 detail view front](photos/6-cn1-bottom-detail.JPG)
 
-Fully assembled:
+The M404 Monitor fully assembled:
 
 ![Fully assembled](photos/7-assembled.JPG)
 
