@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# This is the bash script that provides the m404 service.
+
 ### BEGIN INIT INFO
 # Provides:          m404
 # Required-Start:    $remote_fs $syslog

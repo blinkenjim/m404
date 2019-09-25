@@ -19,6 +19,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA 02110-1301, USA.
 
+# Import the various python packages we need.
+
 import socket
 import time
 import subprocess
@@ -29,6 +31,8 @@ import math
 
 from datetime import timedelta
 import signal, os
+
+# Define a signal handler.
 
 def handler(signum, frame):
     ser404.write("\x0b")
@@ -106,17 +110,13 @@ if True:
             f.close
 
         load1m = rawload.split()[0]
-#        print "1 min avg:", load1m
         load1m = 0.0 + float(load1m)
-#        print "1 min avg:", load1m
 
         (fload, iload) = math.modf(load1m)
-#        print iload, fload
 
         loadbricks = 40 * fload
-#        print "loadbricks = ", loadbricks
         ceilbricks = int(math.ceil(loadbricks))
-#        print "ceilbricks = ", ceilbricks
+
         if ceilbricks > 40:
             ceilbricks = 40
 
@@ -126,9 +126,7 @@ if True:
             g_msg = padout(ceilbricks * "\x7f")
 
         cpucount = iload
-#        print "cpucount =", cpucount
         cpucounti = int(cpucount)
-#        print "cpucounti =", cpucounti
         
         if cpucounti > 40:
             cpucounti = 40
